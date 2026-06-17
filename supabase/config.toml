@@ -1,0 +1,13 @@
+# Minimal Supabase CLI config. Run `supabase link --project-ref <ref>` to bind
+# this to your hosted project, then `supabase db push` to apply migrations.
+project_id = "shehryar-mvp-platform"
+
+[db]
+major_version = 15
+
+[studio]
+enabled = true
+
+[auth]
+enabled = true
+site_url = "http://localhost:3000"

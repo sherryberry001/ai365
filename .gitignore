@@ -1,0 +1,40 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+
+# production
+/build
+/dist
+
+# env files (NEVER commit real keys)
+.env
+.env*.local
+.env.production
+
+# supabase
+/supabase/.branches
+/supabase/.temp
+**/supabase/.env
+
+# misc
+.DS_Store
+*.pem
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
