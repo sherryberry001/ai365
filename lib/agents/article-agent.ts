@@ -38,7 +38,9 @@ export class ArticleAgent extends BaseAgent {
 
   protected async execute(ctx: AgentContext): Promise<AgentOutcome> {
     const { supabase, styleProfile } = ctx;
-    const count = this.opts.count ?? 3;
+    // Default to one article per call so a single request stays within
+    // serverless time limits (the scheduler calls this endpoint directly).
+    const count = this.opts.count ?? 1;
 
     const { data: ideas } = await supabase
       .from("articles")
