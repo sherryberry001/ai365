@@ -128,9 +128,19 @@ export default async function ContentDashboard() {
             title={c.question_title}
             badge={CHANNELS[c.platform as PublishChannel]?.label}
           >
+            {c.question_url && (
+              <a
+                href={c.question_url}
+                target="_blank"
+                rel="noreferrer"
+                className="mb-2 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
+              >
+                Open question on {CHANNELS[c.platform as PublishChannel]?.label ?? "the forum"} ↗
+              </a>
+            )}
             <p className="whitespace-pre-wrap text-sm text-muted-foreground">{c.answer_text}</p>
             {c.follow_up_question && (
-              <p className="mt-2 text-sm italic text-foreground/70">↳ {c.follow_up_question}</p>
+              <p className="mt-2 text-sm italic text-foreground/70">Follow up: {c.follow_up_question}</p>
             )}
           </Item>
         ))}
